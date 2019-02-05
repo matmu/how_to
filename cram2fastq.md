@@ -10,7 +10,8 @@ Since the format only the difference between the reference and the aligned read,
 
 ## Example bash script
 
-```#! /bin/bash
+```
+#!/bin/bash
 
 path_tmp=...
 
