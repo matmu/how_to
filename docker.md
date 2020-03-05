@@ -1,6 +1,19 @@
 # Docker
 
 ## Create Docker image of VEP + Cache
-´´´
-samtools sort -n /path/to/cram | samtools fastq -1 output.R1.fq -2 output.R2.f
-´´´
+
+```bash
+docker pull ensemblorg/ensembl-vep
+
+mkdir vep_cache
+cd vep_cache
+wget ftp://ftp.ensembl.org/pub/release-99/variation/indexed_vep_cache/homo_sapiens_merged_vep_99_GRCh38.tar.gz
+tar zxf homo_sapiens_merged_vep_99_GRCh38.tar.gz
+cd..
+
+docker cp vep_data/ 0f44ccb48f3d:/opt/vep/.vep
+
+docker run -it ensemblorg/ensembl-vep
+
+
+```
