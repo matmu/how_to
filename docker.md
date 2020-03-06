@@ -38,21 +38,7 @@ RUN mkdir .vep; cd .vep; curl -O ftp://ftp.ensembl.org/pub/release-99/variation/
 * requires root privileges to build from recipe -> use https://singularity-hub.org/ instead
 * can't build from recipe on Mac
 
-## Singularityhub
-Build from recipes on Github: https://singularityhub.github.io/singularityhub-docs/docs/getting-started/recipes
-
-## Manually convert/build Singularity image
-
-Binding paths (disabled on OMICS cluster, by default /scratch is bound): https://singularity.lbl.gov/docs-mount
-Singularity recipes: https://singularity.lbl.gov/docs-recipes
-
-```bash
-singularity build vep_99-GRCh38.simg docker://matmu/vep:99-GRCh38
-```
-
-
-## Convert/build with recipe file
-
+## Recipe file
 ```bash
 Bootstrap: docker
 From: matmu/vep:99-GRCh38
@@ -110,6 +96,23 @@ VEP 99-GRCh38. Available VEP cache: merged (use --merged). See environment varia
         --check_existing
         --nearest symbol
         --total_length
+```
+
+## Singularity Hub
+Build from recipes on Github: https://singularityhub.github.io/singularityhub-docs/docs/getting-started/recipes
+
+
+## Build Singularity image
+* Binding paths (disabled on OMICS cluster, by default /scratch is bound): https://singularity.lbl.gov/docs-mount
+* Singularity recipes: https://singularity.lbl.gov/docs-recipes
+
+```bash
+singularity build vep_99-GRCh38.simg shub://matmu/vep:99-grch38
+```
+
+or from Docker image (no apps available)
+```bash
+singularity build vep_99-GRCh38.simg docker://matmu/vep:99-GRCh38
 ```
 
 ## View help
