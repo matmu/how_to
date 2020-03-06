@@ -52,6 +52,17 @@ singularity build vep_99-GRCh38.simg docker://matmu/vep:99-GRCh38
 Bootstrap: docker
 From: matmu/vep:99-GRCh38
 
+%help
+Help me. I'm in the container.
 
-
+%environment
+    REF=/data/lied_egypt_genome/reference/hg38/Homo_sapiens_assembly38.fasta
+    SINGULARITYENV_PREPEND_PATH=/opt/vep/src/ensembl-vep/
+    export REF SINGULARITYENV_PREPEND_PATH
+    
+%apprun default
+    exec vep 
+    
+%apphelp default
+    This is the help for foo.
 ```
