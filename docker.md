@@ -58,16 +58,57 @@ Bootstrap: docker
 From: matmu/vep:99-GRCh38
 
 %help
-Help me. I'm in the container.
+VEP 99-GRCh38. Available VEP cache: merged (use --merged). See environment variables (env) for file locations.
 
 %environment
     REF=/data/lied_egypt_genome/reference/hg38/Homo_sapiens_assembly38.fasta
     SINGULARITYENV_PREPEND_PATH=/opt/vep/src/ensembl-vep/
+    CACHE=/opt/vep/.vep
     export REF SINGULARITYENV_PREPEND_PATH
     
 %apprun default
     exec vep 
     
 %apphelp default
-    This is the help for foo.
+    Args: input.vcf[.gz] outout.txt reference.fasta
+    Command executed (For parameter explanations see http://uswest.ensembl.org/info/docs/tools/vep/script/vep_options.html) :
+    vep --dir CACHE_DIR 
+        --input_file INPUT_FILE 
+        --output_file OUTPUT_FILE 
+        --fasta REFERENCE_FILE 
+        --species homo_sapiens 
+        --assembly GRCh38 
+        --tab 
+        --merged
+        --cache
+        --offline
+        --verbose
+        --force_overwrite
+        --sift b
+        --polyphen b
+        --ccds
+        --uniprot
+        --hgvs
+        --symbol
+        --numbers
+        --domains
+        --regulatory
+        --canonical
+        --protein
+        --biotype
+        --uniprot
+        --tsl
+        --appris
+        --gene_phenotype
+        --af
+        --af_1kg
+        --af_esp
+        --af_gnomad
+        --max_af
+        --pubmed
+        --variant_class 
+        --total_length
+        --check_existing
+        --nearest symbol
+        --total_length
 ```
