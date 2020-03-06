@@ -17,3 +17,7 @@ docker run -it ensemblorg/ensembl-vep
 
 docker commit 0f44ccb48f3d matmu/vep:99-GRCh38
 ```
+
+
+## Convert/build Singularity image
+
