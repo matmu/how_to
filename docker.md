@@ -15,5 +15,5 @@ docker cp vep_data/ 0f44ccb48f3d:/opt/vep/.vep
 
 docker run -it ensemblorg/ensembl-vep
 
-
+docker commit 0f44ccb48f3d matmu/vep:99-GRCh38
 ```
