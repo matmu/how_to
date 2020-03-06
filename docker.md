@@ -34,7 +34,12 @@ WORKDIR /opt/vep/
 RUN mkdir .vep; cd .vep; curl -O ftp://ftp.ensembl.org/pub/release-99/variation/vep/homo_sapiens_vep_99_GRCh38.tar.gz && tar xzf homo_sapiens_vep_99_GRCh38.tar.gz && rm homo_sapiens_vep_99_GRCh38.tar.gz
 ```
 
+# Singularity
+* requires root privileges to build from recipe -> use https://singularity-hub.org/ instead
+* can't build from recipe on Mac
 
+## Singularityhub
+Build from recipes on Github: https://singularityhub.github.io/singularityhub-docs/docs/getting-started/recipes
 
 ## Manually convert/build Singularity image
 
@@ -66,10 +71,3 @@ Help me. I'm in the container.
 %apphelp default
     This is the help for foo.
 ```
-
-# Singularity
-* requires root privileges to build from recipe -> use https://singularity-hub.org/ instead
-* can't build from recipe on Mac
-
-## Singularityhub
-Build from recipes on Github: https://singularityhub.github.io/singularityhub-docs/docs/getting-started/recipes
