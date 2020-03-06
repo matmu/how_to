@@ -66,3 +66,10 @@ Help me. I'm in the container.
 %apphelp default
     This is the help for foo.
 ```
+
+# Singularity
+* requires root privileges to build from recipe -> use https://singularity-hub.org/ instead
+* can't build from recipe on Mac
+
+## Singularityhub
+Build from recipes on Github: https://singularityhub.github.io/singularityhub-docs/docs/getting-started/recipes
