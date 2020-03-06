@@ -111,3 +111,13 @@ VEP 99-GRCh38. Available VEP cache: merged (use --merged). See environment varia
         --nearest symbol
         --total_length
 ```
+
+## View help
+```bash
+singularity help test.simg
+```
+
+For specific app
+```bash
+singularity help --app dog test.simg
+```
