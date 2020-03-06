@@ -94,6 +94,7 @@ VEP 99-GRCh38. Available VEP cache: merged (use --merged). See environment varia
     
 %apphelp default
     Args: input.vcf[.gz] outout.txt reference.fasta
+    Output format: tab-delimited
     Command executed (For parameter explanations see http://uswest.ensembl.org/info/docs/tools/vep/script/vep_options.html) :
     vep --dir $CACHE
         --input_file INPUT_FILE
