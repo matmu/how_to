@@ -49,7 +49,7 @@ VEP 99-GRCh38. Available VEP cache: merged (use --merged). See environment varia
 %environment
     SINGULARITYENV_PREPEND_PATH=/opt/vep/src/ensembl-vep/
     CACHE=/opt/vep/.vep
-    export REF SINGULARITYENV_PREPEND_PATH
+    export CACHE SINGULARITYENV_PREPEND_PATH
     
 %apprun default
     exec vep --dir $CACHE \
