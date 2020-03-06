@@ -36,7 +36,22 @@ RUN mkdir .vep; cd .vep; curl -O ftp://ftp.ensembl.org/pub/release-99/variation/
 
 
 
-## Convert/build Singularity image
+## Manually convert/build Singularity image
+
+Binding paths (disabled on OMICS cluster, by default /scratch is bound): https://singularity.lbl.gov/docs-mount
+Singularity recipes: https://singularity.lbl.gov/docs-recipes
+
 ```bash
 singularity build vep_99-GRCh38.simg docker://matmu/vep:99-GRCh38
+```
+
+
+## Convert/build with recipe file
+
+```bash
+Bootstrap: docker
+From: matmu/vep:99-GRCh38
+
+
+
 ```
