@@ -61,7 +61,6 @@ From: matmu/vep:99-GRCh38
 VEP 99-GRCh38. Available VEP cache: merged (use --merged). See environment variables (env) for file locations.
 
 %environment
-    REF=/data/lied_egypt_genome/reference/hg38/Homo_sapiens_assembly38.fasta
     SINGULARITYENV_PREPEND_PATH=/opt/vep/src/ensembl-vep/
     CACHE=/opt/vep/.vep
     export REF SINGULARITYENV_PREPEND_PATH
@@ -72,7 +71,7 @@ VEP 99-GRCh38. Available VEP cache: merged (use --merged). See environment varia
 %apphelp default
     Args: input.vcf[.gz] outout.txt reference.fasta
     Command executed (For parameter explanations see http://uswest.ensembl.org/info/docs/tools/vep/script/vep_options.html) :
-    vep --dir CACHE_DIR 
+    vep --dir $CACHE
         --input_file INPUT_FILE 
         --output_file OUTPUT_FILE 
         --fasta REFERENCE_FILE 
