@@ -163,3 +163,8 @@ For specific app
 ```bash
 singularity help --app dog test.simg
 ```
+
+##  Run singularity
+```bash
+singularity run --app default vep.99-GRCh38.simg
+```
