@@ -39,103 +39,7 @@ RUN mkdir .vep; cd .vep; curl -O ftp://ftp.ensembl.org/pub/release-99/variation/
 * can't build from recipe on Mac
 
 ## Recipe file
-```bash
-Bootstrap: docker
-From: matmu/vep:99-GRCh38
-
-%help
-VEP 99-GRCh38. Available VEP cache: merged (use --merged). See environment variables (env) for file locations.
-
-%environment
-    SINGULARITYENV_PREPEND_PATH=/opt/vep/src/ensembl-vep/
-    CACHE=/opt/vep/.vep
-    export CACHE SINGULARITYENV_PREPEND_PATH
-    
-%apprun default
-    exec vep --dir $CACHE \
-        --input_file $1 \
-        --output_file $2 \
-        --fasta $3 \
-        --species homo_sapiens \
-        --assembly GRCh38 \
-        --tab \
-        --merged \
-        --cache \
-        --offline \
-        --verbose \
-        --force_overwrite \
-        --sift b \
-        --polyphen b \
-        --ccds \
-        --uniprot \
-        --hgvs \
-        --symbol \
-        --numbers \
-        --domains \
-        --regulatory \
-        --canonical \
-        --protein \
-        --biotype \
-        --uniprot \
-        --tsl \
-        --appris \
-        --gene_phenotype \
-        --af \
-        --af_1kg \
-        --af_esp \
-        --af_gnomad \
-        --max_af \
-        --pubmed \
-        --variant_class \
-        --total_length \
-        --check_existing \
-        --nearest symbol \
-        --total_length
-    
-%apphelp default
-    Args: input.vcf[.gz] outout.txt reference.fasta
-    Output format: tab-delimited
-    Command executed (For parameter explanations see http://uswest.ensembl.org/info/docs/tools/vep/script/vep_options.html) :
-    vep --dir $CACHE
-        --input_file INPUT_FILE
-        --output_file OUTPUT_FILE
-        --fasta REFERENCE_FILE
-        --species homo_sapiens
-        --assembly GRCh38
-        --tab
-        --merged
-        --cache
-        --offline
-        --verbose
-        --force_overwrite
-        --sift b
-        --polyphen b
-        --ccds
-        --uniprot
-        --hgvs
-        --symbol
-        --numbers
-        --domains
-        --regulatory
-        --canonical
-        --protein
-        --biotype
-        --uniprot
-        --tsl
-        --appris
-        --gene_phenotype
-        --af
-        --af_1kg
-        --af_esp
-        --af_gnomad
-        --max_af
-        --pubmed
-        --variant_class 
-        --total_length
-        --check_existing
-        --nearest symbol
-        --total_length
-```
+Available in https://github.com/matmu/vep/
 
 ## Singularity Hub
 Build from recipes on Github: https://singularityhub.github.io/singularityhub-docs/docs/getting-started/recipes
@@ -156,15 +60,15 @@ singularity build vep_99-GRCh38.simg docker://matmu/vep:99-GRCh38
 
 ## View help
 ```bash
-singularity help test.simg
+singularity run-help vep.99-GRCh38.simg
 ```
 
 For specific app
 ```bash
-singularity help --app dog test.simg
+singularity run-help --app vep-tab vep.99-GRCh38.simg
 ```
 
 ##  Run singularity
 ```bash
-singularity run --app default vep.99-GRCh38.simg
+singularity run --app vep-tab vep.99-GRCh38.simg
 ```
