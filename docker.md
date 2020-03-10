@@ -23,6 +23,10 @@ Dockerfile: https://github.com/matmu/vep
 ```bash
 docker build - < Dockerfile
 ```
+or
+```bash
+docker build - < github.com/matmu/vep
+```
 
 # Singularity
 * requires root privileges to build from recipe -> use https://singularity-hub.org/ instead
